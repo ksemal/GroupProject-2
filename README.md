@@ -86,3 +86,7 @@ _created by David Padilla, Sara Austin, Ksenia Malysheva, Libby Duggan_
 - Customer page:
 
 ![screenshot](public/assets/img/customer.png)
+
+- SMS:
+
+![screenshot](public/assets/img/sms.jpg)
