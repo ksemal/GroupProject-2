@@ -1,5 +1,6 @@
 # Schedulr | Client Scheduling Application
 
+An appointment manager application for business and their customers
 Massive Full-stack Project **(Project Duration: 2wks)**
 
 ### Group Team Members
@@ -11,13 +12,15 @@ Massive Full-stack Project **(Project Duration: 2wks)**
 
 ### Link to Website
 
-coming soon
+https://schedulr-appt.herokuapp.com/
+
+You can use test account to explore functionality of the application. Sign in with email: "test@test.com" and password: "test"
 
 ### Technologies Used
 
 HTML5, CSS3, Javascript, jQuery, Bootstrap 4, Google Fonts,
 Font Awesome 5, SweetAlert2, Moment.js, Node, Express, Mocha,
-Chai, MySQL, Sequelize, Handlebars, Nexmo, Multer.js, Passport,
+Chai, MySQL, Sequelize, Handlebars, Nexmo, Multer, Multer-s3, Amazon S3 - AWS, Passport,
 Tempus Dominus, Dotenv, Travis, Eslint
 
 ### Challenges
@@ -57,3 +60,29 @@ Edit Customer Information Fuctionality, Appointment Summary Table & Functionalit
   available appointment times to avoid overalaps.
 
 _created by David Padilla, Sara Austin, Ksenia Malysheva, Libby Duggan_
+
+### Application screenshots
+
+- Main page:
+
+![screenshot](public/assets/img/main.png)
+
+- Client Dashboard:
+
+![screenshot](public/assets/img/dashboard.png)
+
+- Create new customer:
+
+![screenshot](public/assets/img/new_customer.png)
+
+- Create new appointment:
+
+![screenshot](public/assets/img/new_appt.png)
+
+- Customer portal:
+
+![screenshot](public/assets/img/portal.png)
+
+- Customer page:
+
+![screenshot](public/assets/img/customer.png)
