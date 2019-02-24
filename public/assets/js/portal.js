@@ -3,7 +3,6 @@ $(document).ready(function() {
   function showDetails() {
     $("#app-details").on("click", function(event) {
       var radioValue = $("input[name='selectedCustomer']:checked").val();
-      console.log(radioValue);
       event.preventDefault();
       $.ajax({
         method: "GET",
@@ -46,7 +45,6 @@ $(document).ready(function() {
     $(document).on("click", ".delete", function(event) {
       event.preventDefault();
       var id = $(this).data("delete");
-      console.log(id);
       $(this)
         .closest("tr")
         .remove();
@@ -54,8 +52,6 @@ $(document).ready(function() {
         method: "DELETE",
         url: "/api/appointments/" + id,
         data: { id: id }
-      }).then(function(response) {
-        console.log(response);
       });
     });
   }
@@ -67,11 +63,8 @@ $(document).ready(function() {
     $(document).on("click", ".edit", function(event) {
       event.preventDefault();
       appId = $(this).data("edit");
-      console.log(appId);
-
       $(document).on("click", "#editApptPortalBtn" + appId, function(event) {
         event.preventDefault();
-        console.log("clicked");
         var note = $("#notes" + appId)
           .val()
           .trim();
@@ -79,7 +72,6 @@ $(document).ready(function() {
           .find("input")
           .val()
           .trim();
-        console.log(start_time);
         if (note === "") {
           note = $("#currentNote" + appId).text();
         }
@@ -90,10 +82,7 @@ $(document).ready(function() {
           method: "PUT",
           url: "/api/appointments",
           data: { id: appId, start_time: start_time, note: note }
-        }).then(function(response) {
-          console.log(response);
         });
-
         $("#currentNote" + appId).text(note);
         $("#currentTime" + appId).text(start_time);
         $("#notes" + appId).val("");
@@ -113,14 +102,12 @@ $(document).ready(function() {
       method: "GET",
       url: "/api/customer/" + editID
     }).then(function(response) {
-      console.log(response[0]);
       var address = response[0].address.split(" ");
       var addLength = address.length;
       address.pop();
       var state = address.pop();
       var city = address.pop();
       var street = address.join(" ");
-      console.log(address, street, state, city);
       $("#custEmailEdit").val(response[0].email);
       $("#custFirstNameEdit").val(response[0].firstName);
       $("#custLastNameEdit").val(response[0].lastName);
@@ -177,14 +164,12 @@ $(document).ready(function() {
     editCustomer.zipcode = $("#custZipCodeEdit")
       .val()
       .trim();
-    console.log(editCustomer);
     $.ajax({
       method: "PUT",
       url: "/api/new-customer",
       data: editCustomer
     }).then(function(response) {
       var alertmessage = "";
-      console.log(response.errors);
       if (response.errors) {
         response.errors.forEach(function(element) {
           alertmessage +=

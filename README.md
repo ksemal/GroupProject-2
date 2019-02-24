@@ -11,11 +11,7 @@ Massive Full-stack Project **(Project Duration: 2wks)**
 
 ### Link to Website
 
-https://app-schedulr.herokuapp.com/
-
-**Browser compatibility checked with:**
-
-- Google Chrome - Version Version 72.0.3626.109 and up
+coming soon
 
 ### Technologies Used
 
@@ -26,9 +22,6 @@ Tempus Dominus, Dotenv, Travis, Eslint
 
 ### Challenges
 
-Image Upload with Multer.js
-_(Using Node.js middleware for handling multiplat/form-data)_
-Nexmo
 _(Implementing code into the server-side)_
 Association Scripting between 3 Tables
 _(Client, Customer, Appointments)_

@@ -47,7 +47,6 @@ $("#createCustomer").on("click", function(event) {
     data: newCustomer
   }).then(function(response) {
     var alertmessage = "";
-    console.log(response.errors);
     if (response.errors) {
       response.errors.forEach(function(element) {
         alertmessage +=

@@ -52,8 +52,6 @@ module.exports = function(app, passport) {
             }
           ]
         }).then(function(dbApptCount) {
-          console.log("query");
-          console.log(req.query);
           if (Object.keys(req.query).length === 0 || req.query.sval === "") {
             db.Customer.findAll({}).then(function(dbCustomer) {
               res.render("dashboard", {
@@ -140,11 +138,8 @@ module.exports = function(app, passport) {
   });
 
   //Authentification
-  app.post("/signup", upload.single("file"), function(req, res, next) {
+  app.post("/signup", upload.array("file", 1), function(req, res, next) {
     passport.authenticate("local-signup", function(err, user, info) {
-      console.log(err);
-      console.log(user);
-      console.log(info);
       if (err) {
         return next(err);
       }

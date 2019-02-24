@@ -44,6 +44,7 @@ module.exports = function(passport, client) {
             });
           } else {
             var clientPassword = generateHash(password);
+            console.log(req.files);
             var data = {
               email: email,
               password: clientPassword,
@@ -53,7 +54,7 @@ module.exports = function(passport, client) {
               bus_number: req.body.bus_number,
               first_apt: req.body.first_apt + ":00",
               last_apt: req.body.last_apt + ":00",
-              image: req.file.path
+              image: req.files[0].location
             };
             db.Client.create(data).then(function(newClient, created) {
               if (!newClient) {

@@ -11,7 +11,6 @@ var editedAppt = function() {
     start_time: $startTime.val().trim(),
     note: $note.val().trim()
   };
-  console.log(appt);
   $.ajax({
     method: "PUT",
     url: "/api/appointments",

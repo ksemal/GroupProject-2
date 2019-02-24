@@ -80,7 +80,6 @@ module.exports = function(app) {
 
   // Delete an appointment by id
   app.delete("/api/appointments/:id", function(req, res) {
-    console.log("deleting");
     db.Appointment.destroy({ where: { id: req.params.id } }).then(function(
       dbAppt
     ) {
@@ -116,8 +115,6 @@ module.exports = function(app) {
   // Show appointments for current customer
 
   app.get("/api/customer-app", function(req, res) {
-    console.log("customerid");
-    console.log(req.query.customerId);
     db.Appointment.findAll({
       where: {
         ClientId: req.user.id,
@@ -182,7 +179,6 @@ module.exports = function(app) {
       }
     })
       .then(function(custInfo) {
-        console.log(custInfo);
         res.json(custInfo);
       })
       .catch(function(err) {
